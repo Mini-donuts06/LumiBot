@@ -1,26 +1,22 @@
-Robo_App/
+Robo_App_Web/
 │
-├── main.py                 # PyQt chat GUI
-├── chatbot.py              # Chatbot brain (loads JSONs, handles intents, actions, time)
+├── app.py                  # Flask backend, routes for chat & games
+├── chatbot.py              # Chatbot brain, interacts with MongoDB and TensorFlow
 ├── planning.txt            # Project planning notes
-├── folder_structure.txt    # Folder reference
 │
-├── logic/                  # JSON data (bot “brain”)
-│   ├── intents.json        # Chat intents, actions, and time-aware responses
-│   ├── personality.json    # Bot personality settings (tone, humor, topics)
-│   └── memory.json         # User data, reminders, conversation history
+├── templates/              # HTML pages
+│   ├── index.html          # Chat interface
+│   └── game.html           # Game page
 │
-├── games/                  # Pygame games
-│   └── space_invaders/
-│       ├── space_invaders.py   # Main game script
-│       └── assets/              # Images, sounds for the game
+├── static/                 # CSS, JS, images
+│   ├── css/
+│   ├── js/
+│   └── images/
 │
-├── assets/                 # Shared assets for GUI or chatbot (optional)
-│   ├── images/
-│   └── sounds/
-│
-├── models/                 # Future AI models (e.g., intent classifier)
-│
-└── utils/                  # Helper modules (optional)
-    ├── time_helpers.py     # Functions for time queries, reminders, scheduling
-    └── helpers.py          # Other utility functions
+├── games/                  # Pygame or JS games
+├── models/                 # TensorFlow models
+│   └── intent_classifier/  # Optional saved models
+└── utils/                  # Helper modules
+    ├── db_helpers.py       # MongoDB query functions
+    ├── tf_helpers.py       # TensorFlow utility functions
+    └── helpers.py          # Other utilities (time, formatting)
